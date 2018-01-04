@@ -41,9 +41,13 @@ public class SecondActivity extends AppCompatActivity {
                 Log.d("javatestlog", "*ルート" + ans);
                 textView.setText(String.valueOf(ans));
             } else {
-                double ans = value1_d / value2_d;
-                Log.d("javatestlog", "/ルート" + ans);
-                textView.setText(String.valueOf(ans));
+                if((value1_d == 1 && value2_d == 0) || (value1_d == 0 && value2_d == 0)) {
+                    textView.setText("計算できません。");
+                } else {
+                    double ans = value1_d / value2_d;
+                    Log.d("javatestlog", "/ルート" + ans);
+                    textView.setText(String.valueOf(ans));
+                }
             }
         } else {
             textView.setText("数値を入力してください。");
